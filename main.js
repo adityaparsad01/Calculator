@@ -18,7 +18,6 @@ class Calculator{
     appendNumber(number){
         if(number === '.' && this.currentOperand.includes('.')) return alert("Calculator Can't have two decimal points")
         this.currentOperand = this.currentOperand.toString() + number.toString()
-        console.log(this.currentOperand)
     }
 
     chooseOperation(operation){
@@ -99,7 +98,9 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement,currentOperandTextElement)
 
+// console.log(calculator)
 numberButtons.forEach(button=>{
+    console.log(button.innerText)
     button.addEventListener('click',()=>{
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
